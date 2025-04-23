@@ -1,0 +1,28 @@
+spring:
+    application:
+        name: razerGold
+    
+    datasource:
+        url: jdbc:postgresql://localhost:5433/postgresqldocker
+        username: postgres
+        password: 123456
+        driver-class-name: org.postgresql.Driver
+
+    jpa:
+        hibernate: 
+            ddl-auto: none 
+        show-sql: true
+        properties:
+            hibernate.dialect: org.hibernate.dialect.PostgreSQLDialect
+
+    cloud:
+        config:
+            enabled: false
+
+
+    h2:
+        console:
+            enabled: false
+
+    jmx:
+        enabled: false
