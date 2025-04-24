@@ -4,6 +4,7 @@ WORKDIR /app
 
 # Copia tudo e compila o projeto
 COPY . .
+RUN chmod +x mvnw
 RUN ./mvnw clean package -DskipTests
 
 # Etapa de execução
