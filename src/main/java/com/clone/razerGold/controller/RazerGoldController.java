@@ -7,9 +7,11 @@ import com.clone.razerGold.entity.User;
 import com.clone.razerGold.entity.dto.UserDTO;
 import com.clone.razerGold.repository.PurchaseRepository;
 import com.clone.razerGold.service.PurchaseService;
+import com.clone.razerGold.service.UserService;
 
 import java.util.Optional;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -22,17 +24,9 @@ import org.springframework.web.bind.annotation.RequestBody;
 public class RazerGoldController {
 
 
+    @Autowired
     private PurchaseService purchaseService;
 
-
-    @PostMapping("/login")
-    public UserDTO saveUser(@RequestBody UserDTO entity) {
-        
-        purchaseService.saveUser(entity);
-        
-        return entity;
-    }
-    
     
     @GetMapping("")
     public String menu(){
