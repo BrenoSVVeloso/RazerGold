@@ -12,6 +12,9 @@ import com.clone.razerGold.entity.dto.UserDTO;
 import com.clone.razerGold.service.UserService;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.PutMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+
 
 
 @RestController
@@ -38,6 +41,14 @@ public class UserController {
 
         return userService.allUsers();
     }
+
+    @PutMapping("/{id}")
+    public UserDTO updateUser(@PathVariable long id, @RequestBody UserDTO entity) {
+       
+        return userService.updateUser(id, entity);
+    }
+
+    
     
     
     

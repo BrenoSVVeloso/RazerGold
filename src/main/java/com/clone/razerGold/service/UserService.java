@@ -50,5 +50,23 @@ public class UserService {
         
         return UserMapper.toDTOList(userRepository.findAll());
     }
-    
+
+
+    public UserDTO updateUser(long id, UserDTO userDTO) {
+        
+        Optional<User> user = userRepository.findById(id);
+        
+        if(user.isPresent()){
+            user.get().setId(userDTO.getId());
+            user.get().setName(userDTO.getName());
+            user.get().setEmail(userDTO.getEmail());
+            user.get().setPassword(userDTO.getPassword());
+
+            return UserMapper.toDTO(userRepository.save(user.get()));
+
+        }else {
+
+            throw new RuntimeException("Usuário não encontrado");
+        }
+    }
 }
