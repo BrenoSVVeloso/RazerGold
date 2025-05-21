@@ -3,9 +3,9 @@ spring:
         name: razerGold
     
     datasource:
-        url: jdbc:postgresql://localhost:5433/postgresqldocker
-        username: postgres
-        password: 123456
+        url: jdbc:postgresql://dpg-d0n12n3ipnbc73dlejk0-a:5432/razerdb
+        username: postgresql
+        password: f1gAlLtQKijFvL9ajDN8i1oxnBBt6BmN
         driver-class-name: org.postgresql.Driver
 
     jpa:
