@@ -41,12 +41,12 @@ public class UserService {
 
         }else{            
 
-            throw new RuntimeException("Usuário não encontrado");
+            throw new RuntimeException("User not found");
         }
         
     }
 
-    public List<UserDTO> allUsers(){
+    public List<UserDTO> getAllUsers(){
         
         return UserMapper.toDTOList(userRepository.findAll());
     }
@@ -66,7 +66,25 @@ public class UserService {
 
         }else {
 
-            throw new RuntimeException("Usuário não encontrado");
+            throw new RuntimeException("User not found");
         }
+    }
+
+
+    public String deleteUser(long id) {
+        
+        Optional<User> user = userRepository.findById(id);
+
+        if(user.isPresent()){
+            
+            userRepository.delete(user.get());
+
+            return "User successfully deteled";
+        
+        }else{
+
+            throw new RuntimeException("User not found");
+        }
+        
     }
 }

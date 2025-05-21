@@ -20,13 +20,8 @@ import org.springframework.web.bind.annotation.RequestBody;
 
 
 @RestController
-@RequestMapping("/br/pt-br")
-public class RazerGoldController {
-
-
-    @Autowired
-    private PurchaseService purchaseService;
-
+@RequestMapping("/br/menu")
+public class MenuController {
     
     @GetMapping("")
     public String menu(){
@@ -34,16 +29,13 @@ public class RazerGoldController {
     }
 
     @GetMapping("/catalog/{gameName}")
-    public String menuValorant(@PathVariable String gameName) {
+    public String menuGames(@PathVariable String gameName) {
         return "BIANCA EU TE AMO";
     }
-    
 
-    @PostMapping("/catalog/{gameName}")
-    public String postMethodName(@RequestBody String entity, @PathVariable String gameName) {
-        
-        return entity;
+    @GetMapping("/catalog/valorant")
+    public String menuGames() {
+        return "BIANCA EU TE AMO";
     }
-    
 
 }

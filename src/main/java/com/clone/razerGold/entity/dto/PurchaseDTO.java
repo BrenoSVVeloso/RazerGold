@@ -6,12 +6,14 @@ import com.clone.razerGold.entity.enums.PriceEnum;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 
 @Getter
 @Setter
 @AllArgsConstructor
+@NoArgsConstructor
 public class PurchaseDTO {
     
     private long id;
