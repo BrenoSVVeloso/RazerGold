@@ -14,10 +14,9 @@ public class CorsConfig {
             @Override
             public void addCorsMappings(CorsRegistry registry) {
                 registry.addMapping("/**") // Permite todos os endpoints
-                        .allowedOrigins("http://localhost:4200") // Permite o Angular
+                        .allowedOrigins("https://razergoldfront.onrender.com") // Permite o Angular
                         .allowedMethods("GET", "POST", "PUT", "DELETE") // Métodos permitidos
-                        .allowedHeaders("*") // Todos os headers permitidos
-                        .allowCredentials(true); // Permite envio de cookies/autenticação
+                        .allowedHeaders("*"); // Todos os headers permitidos
             }
         };
     }
